@@ -1,0 +1,29 @@
+package huuhan.webbansach_be.Entity;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name = "sach_yeu_thich")
+public class SachYeuThichE {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ma_sach_yeu_thich")
+    private int maSachYeuThich;
+
+    @ManyToOne(cascade = {
+            CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH
+    })
+    @JoinColumn(name = "ma_nguoi_dung", nullable = false)
+    private NguoiDungE nguoiDung;
+
+    @ManyToOne(cascade = {
+            CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH
+    })
+    @JoinColumn(name = "ma_sach", nullable = false)
+    private SachE sach;
+
+}

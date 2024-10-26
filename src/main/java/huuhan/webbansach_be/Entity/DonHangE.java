@@ -52,6 +52,6 @@ public class DonHangE {
             CascadeType.DETACH, CascadeType.REFRESH
     })
     @JoinColumn(name = "ma_hinh_thuc_giao_hang")
-    private HinhThucGiaoHang hinhThucGiaoHang;
+    private HinhThucGiaoHangE hinhThucGiaoHang;
 
 }
